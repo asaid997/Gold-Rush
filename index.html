@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css"  media="screen,projection"/>
+    <title>Gold Rush</title>
+</head>
+<body>
+    <div id="container" class="row">
+        <table id="board" class="centered blue-grey lighten-3">
+
+        </table>
+        
+
+        <div id="score" class="">
+            <h4 class="col l2 m4 blue-text text-darken-1">Player1:<span id="player1-score"> 0</span></h4>
+            <h4 class="col l2 offset-l8 m4 offset-m4 right-align red-text text-darken-1" >Player2:<span id="player2-score"> 0</span></h4>
+        </div>
+        <div id="bottom-bar" class="">
+            <input id="rows" class="col l2" placeholder="Rows">
+            <input id="cols" class="col l2 offset-l1" placeholder="Columns">
+            <a id="generate" class="waves-effect waves-light btn col l6 offset-l1">button</a>
+        </div>
+    </div>
+
+
+
+    <script id="board-template" type="text/x-handlebars-template">
+        <tbody>
+            {{#each board}}
+                <tr>
+                    {{#each this}}
+                        <td class="t">{{populate this}}</td>
+                    {{/each}}
+                </tr>
+            {{/each}}
+        </tbody>
+    </script>
+
+    <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="Matrix.js"></script>
+    <script src="GoldRush.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
